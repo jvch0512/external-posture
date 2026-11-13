@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflare-dns.com; base-uri 'none'; form-action 'none'">
+<title>external-posture</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>external-posture</h1>
+    <p class="sub">Passive external security posture of a domain: email authentication, DNS hygiene, security headers, TLS and security.txt, mapped to NIS2 Article 21 and ENS. Only assess domains you own or have permission to assess.</p>
+  </div>
+  <label>Report language<select id="lang"><option value="en">English</option><option value="es">Español</option></select></label>
+</header>
+<main>
+  <div class="panel">
+    <h2>1. Collect</h2>
+    <div class="grid">
+      <label>Domain<input id="domain" placeholder="example.com" spellcheck="false"></label>
+      <label>&nbsp;<button type="button" id="dns-btn">Check DNS now</button></label>
+      <label>&nbsp;<button type="button" id="weak">Load weak sample</button></label>
+      <label>&nbsp;<button type="button" id="strong">Load strong sample</button></label>
+    </div>
+    <p class="hint">DNS records are fetched from your browser through Cloudflare DNS over HTTPS, so Cloudflare sees the domain name you type. Headers cannot be read cross-site from a browser: paste them below (from <code>curl -sI https://domain</code> or the network tab), or use the CLI for the full scan.</p>
+    <h2>HTTP response headers (optional)</h2>
+    <textarea id="headers" rows="5" spellcheck="false"></textarea>
+    <div class="row"><span class="hint">Snapshot JSON (editable, same format the CLI saves)</span></div>
+    <textarea id="snap" rows="8" spellcheck="false"></textarea>
+  </div>
+  <div id="out"></div>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

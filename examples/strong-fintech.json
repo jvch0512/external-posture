@@ -1,0 +1,29 @@
+{
+  "domain": "strong-fintech.test",
+  "collectedAt": "2026-11-13T12:00:00Z",
+  "dns": {
+    "ns": ["ns1.dnshost.test", "ns2.dnshost.test"],
+    "mx": ["mx1.mailer.test"],
+    "txt": ["v=spf1 include:_spf.mailer.test -all"],
+    "dmarc": ["v=DMARC1; p=reject; pct=100; rua=mailto:dmarc@strong-fintech.test"],
+    "mtaSts": ["v=STSv1; id=20261101"],
+    "tlsRpt": ["v=TLSRPTv1; rua=mailto:tls@strong-fintech.test"],
+    "caa": ["0 issue \"letsencrypt.org\""],
+    "dnssec": true
+  },
+  "http": {
+    "url": "https://strong-fintech.test/",
+    "status": 200,
+    "headers": {
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "content-security-policy": "default-src 'self'; frame-ancestors 'none'",
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "server": "nginx"
+    },
+    "setCookies": ["sid=xyz; Path=/; Secure; HttpOnly; SameSite=Strict"],
+    "httpRedirectsToHttps": true
+  },
+  "tls": { "protocol": "TLSv1.3", "daysToExpiry": 62, "issuer": "Demo CA", "hostnameMatches": true },
+  "securityTxt": { "found": true, "contact": ["mailto:security@strong-fintech.test"], "expires": "2027-06-30T00:00:00Z" }
+}

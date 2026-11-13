@@ -1,0 +1,23 @@
+{
+  "domain": "weak-fintech.test",
+  "collectedAt": "2026-11-13T12:00:00Z",
+  "dns": {
+    "ns": ["ns1.dnshost.test", "ns2.dnshost.test"],
+    "mx": ["mail.weak-fintech.test"],
+    "txt": ["v=spf1 include:_spf.mailer.test include:spf.crm.test include:spf.helpdesk.test include:spf.billing.test include:spf.news.test include:spf.hr.test mx a ptr include:spf.survey.test include:spf.cdn.test ~all"],
+    "dmarc": ["v=DMARC1; p=none"],
+    "mtaSts": [],
+    "tlsRpt": [],
+    "caa": [],
+    "dnssec": false
+  },
+  "http": {
+    "url": "https://weak-fintech.test/",
+    "status": 200,
+    "headers": { "server": "Apache/2.4.41 (Ubuntu)", "x-powered-by": "PHP/7.4.3", "content-type": "text/html" },
+    "setCookies": ["PHPSESSID=abc123; path=/", "lang=es; Secure; HttpOnly; SameSite=Lax"],
+    "httpRedirectsToHttps": false
+  },
+  "tls": { "protocol": "TLSv1.2", "daysToExpiry": 9, "issuer": "Demo CA", "hostnameMatches": true },
+  "securityTxt": { "found": false, "contact": [], "expires": "" }
+}
